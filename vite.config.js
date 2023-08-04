@@ -15,12 +15,22 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver({importStyle: "sass"})],
     }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/assets/css/element/variables.scss" as *;
+          @use "@/assets/css/variables.scss" as *;
+        `,
+      },
+    },
+  },
 })
