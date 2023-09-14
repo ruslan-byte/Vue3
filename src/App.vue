@@ -1,7 +1,6 @@
 <template>
   <div>
     Новая страница
-    <el-button type="primary">res</el-button>
     <br/>
     <logo-icon class="logo"/>
   </div>
